@@ -1,26 +1,25 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    let isClickedButtonOne = false; 
+    let isButtonOneClicked = false; 
 
     const firstInstruction = document.getElementById('click1');
+    const firstBoxText = ["cambridge: law degree; first class", "prior career: screenwriter", "hobbies: being autistic", " > Click on item above to hear more", " > "];
+    const firstBoxId = ["col1Type1", "col1Type2", "col1Type3", "col1Type4", "col1Type5"];
 
-    firstInstruction.addEventListener('click', function test() {
+    firstInstruction.addEventListener('click', function () { addText(isButtonOneClicked, firstBoxText, firstBoxId); }); 
 
+    function addText(buttonBool, textList, idList) {
 
-        if (isClickedButtonOne) {
+        if (buttonBool) {
             return; 
         }
 
-        isClickedButtonOne = true; 
+        buttonBool = true; 
 
-        const hiddenElements = document.getElementsByClassName('hidden1');
-        const textList = ["cambridge: law degree; first class", "prior career: screenwriter", "hobbies: being autistic"];
-        const idList = ["col1Type1", "col1Type2", "col1Type3"];
-
+ 
         let i = 0;
         let j = 0; 
 
-        hiddenElements[i].style.visibility = "visible";
         let text = textList[i];
         let emptySpan = document.getElementById(idList[i]);
 
@@ -32,10 +31,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 emptySpan.innerHTML += text.charAt(j);
                 j++;
                 setTimeout(typeWriter, 50);
-            } else if (i < 3) {
+            } else if (i < 5) {
                 i++; 
                 j = 0; 
-                hiddenElements[i].style.visibility = "visible";
                 text = textList[i];
                 emptySpan = document.getElementById(idList[i]);
                 setTimeout(typeWriter, 50);
@@ -43,7 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         
-    })
+    }
 
 
 });
