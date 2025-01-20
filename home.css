@@ -54,16 +54,19 @@ a:hover {
 }
 
 
-.col-xs-12.col-sm-6.col-md-4 span:hover {
+.response {
+    color: white;
+    display: inline-block; 
+    margin: 20px; 
+}
+
+input {
+    margin: 20px;
+}
+
+.col-xs-12.col-sm-6.col-md-4 .highlight:hover {
         background-color: #FF775A;
         color: white; 
         cursor: pointer;
-    }
-
-.hidden1 {
-    visibility: hidden; 
 }
 
-#col1Type1 {
-    color: white;
-}
